@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.form__contact .form-control{
+    display: inline-block;
+    width: 300px;
+}
+.form__contact p i{
+    color: #EDB600;
+   
+}
+.form__contact button{
+    padding: 8px 30px;
+    border-radius: 30px;
+    font-size: 18px;
+}
+.form__contact .form-control{
+    box-shadow: 2px 2px 2px 2px #d9e0ea inset;
+    background-color: #ecf0f3;
+    border-radius: 10px;
+}
+.form__contact .form-control:focus{
+    border: none;
+    box-shadow: 2px 2px 2px 2px #d9e0ea inset;
+}
+.form__contact .row .form-control{
+    width: 100%;
+}
+@media screen and (max-width:768px) {
+    .form__contact .row input{
+        width: 300px;
+    }
+}
+.form__contact .row{
+    gap: 20px 0;
+}
+
+
+#ftn ul {
+    list-style: none;
+}
+#ftn ul li{
+    position: relative;
+    padding: 15px 50px 15px 30px;
+    border: 1px solid #d9e0ea;
+    border-bottom: 0px;
+}
+#ftn ul li:last-of-type{
+    border-bottom: 1px solid #d9e0ea;
+}
+#ftn ul li>input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#ftn ul li>input:checked ~.form__bottom{
+    margin-top: 0;
+    max-height: 0;
+    opacity: 0;
+    transform: translate(0 , -25%);
+}
+.form__bottom{
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    transition: all 0.5s ease-in-out;
+    opacity: 1;
+    transform: translate(0,0);
+    max-height: 300px;
+}
+/* #ftn .form__icon{
+    position: absolute;
+    right: 25px;
+    top: 23px;
+} */
+#ftn ul li span i{
+    color:#007bff ;
+}
+#ftn .form__color{
+    font-size: 12px;
+    color: white;
+    background-color: #007bff;
+    padding: 1px 2px;
+    border-radius: 3px;
+}
+.icon1{
+    display: none;
+}
+#checkmode ~.icon1{
+    display: block;
+}

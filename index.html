@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài Tập JS</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <!-- Main  -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form__contact">
+        <form class="mt-5">
+          <input
+            type="number"
+            id="inputnum"
+            placeholder="nhập số"
+            class="form-control"
+          />
+          <button onclick="main()" class="btn btn-primary ml-3" type="button">
+           Thêm số
+          </button>
+          <p class="alert alert-success mt-4">
+            <i class="fa-solid fa-hand-point-right mr-3"></i
+            ><span id="txtinso"></span>
+          </p>
+        </form>
+        <div class="form__contact mt-5 mb-5" id="ftn">
+          <ul>
+            <li>
+              
+              <input type="checkbox" checked >
+              <div class="form__top d-flex align-items-center justify-content-between">
+                <span>
+                    <i class="bi bi-1-square-fill mr-2"></i>
+                    tổng số dương
+                  </span>
+                  
+                   
+                  <i class="fa-solid fa-angle-down form__icon"></i>
+                  
+              </div>
+            
+              <div class="form__bottom ">
+                <button
+                 onclick="tongduong()"
+                  class="btn btn-primary ml-3 mt-4"
+                  type="button"
+                >
+                  Kết quả
+                </button>
+                <p class="alert alert-success mt-4">
+                  <i class="fa-solid fa-hand-point-right mr-3"></i
+                  ><span id="txtinhtong"></span>
+                </p>
+              </div>
+            </li>
+            <li>
+                <input type="checkbox" checked >
+                <div class="form__top d-flex align-items-center justify-content-between">
+                <span>
+                  <i class="bi bi-2-square-fill mr-2"></i>
+                  đếm số dương
+                </span>
+                <i class="fa-solid fa-angle-down form__icon"></i>
+                </div>
+                <div class="form__bottom ">
+                  <button
+                    onclick="demso()"
+                    class="btn btn-primary ml-3 mt-4"
+                    type="button"
+                  >
+                    Kết quả
+                  </button>
+                  <p class="alert alert-success mt-4">
+                    <i class="fa-solid fa-hand-point-right mr-3"></i
+                    ><span id="txtdemso"></span>
+                  </p>
+                </div>
+              </li>
+              <li>
+                <input type="checkbox" checked >
+                <div class="form__top d-flex align-items-center justify-content-between">
+                <span>
+                  <i class="bi bi-3-square-fill mr-2"></i>
+                  tìm số nhỏ nhất
+                </span>
+                <i class="fa-solid fa-angle-down form__icon"></i>
+                </div>
+                <div class="form__bottom ">
+                  <button
+                   onclick="sonhonhat()"
+                    class="btn btn-primary ml-3 mt-4"
+                    type="button"
+                  >
+                    Kết quả
+                  </button>
+                  <p class="alert alert-success mt-4">
+                    <i class="fa-solid fa-hand-point-right mr-3"></i
+                    ><span id="txtmin"></span>
+                  </p>
+                </div>
+              </li>
+              <li>
+                <input type="checkbox" checked>
+                <div class="form__top d-flex align-items-center justify-content-between">
+                <span>
+                  <i class="bi bi-4-square-fill mr-2"></i>
+                  tìm số dương nhỏ nhất
+                </span>
+                <i class="fa-solid fa-angle-down form__icon"></i>
+                </div>
+                <div class="form__bottom ">
+                  <button
+                   onclick="minduong()"
+                    class="btn btn-primary ml-3 mt-4"
+                    type="button"
+                  >
+                    Kết quả
+                  </button>
+                  <p class="alert alert-success mt-4">
+                    <i class="fa-solid fa-hand-point-right mr-3"></i
+                    ><span id="txtminduong"></span>
+                  </p>
+                </div>
+              </li>
+              <li>
+                <input type="checkbox" checked>
+                <div class="form__top d-flex align-items-center justify-content-between">
+                <span>
+                  <i class="bi bi-5-square-fill mr-2"></i>
+                  tìm số chẵn cuối cùng
+                </span>
+                <i class="fa-solid fa-angle-down form__icon"></i>
+                </div>
+                <div class="form__bottom ">
+                  <button
+                   onclick="chanend()"
+                    class="btn btn-primary ml-3 mt-4"
+                    type="button"
+                  >
+                    Kết quả
+                  </button>
+                  <p class="alert alert-success mt-4">
+                    <i class="fa-solid fa-hand-point-right mr-3"></i
+                    ><span id="txtchanend"></span>
+                  </p>
+                </div>
+              </li>
+              <li>
+                <input type="checkbox" checked>
+                <div class="form__top d-flex align-items-center justify-content-between">
+                <span>
+                  <i class="bi bi-6-square-fill mr-2"></i>
+                  đổi chỗ
+                </span>
+                <i class="fa-solid fa-angle-down form__icon"></i>
+                </div>
+                <div class="form__bottom ">
+                    <form class="form__contact mt-5">
+                      <input type="number" placeholder="nhập vị trí 1" id="input1" class="form-control mr-3">
+                      <input type="number" placeholder="nhập vị trí 2" id="input2" class="form-control">
+                    </form>
+
+                  <button
+                   onclick="doicho()"
+                    class="btn btn-primary ml-3 mt-4"
+                    type="button"
+                  >
+                    Kết quả
+                  </button>
+                  <p class="alert alert-success mt-4">
+                    <i class="fa-solid fa-hand-point-right mr-3"></i
+                    ><span id="txtdoicho"></span>
+                  </p>
+                </div>
+              </li>
+              <li>
+                <input type="checkbox" checked>
+                <div class="form__top d-flex align-items-center justify-content-between">
+                <span>
+                  <i class="bi bi-7-square-fill mr-2"></i>
+                  sắp xếp tăng dần
+                </span>
+                <i class="fa-solid fa-angle-down form__icon"></i>
+                </div>
+                <div class="form__bottom ">
+                  <button
+                   onclick="sapxep()"
+                    class="btn btn-primary ml-3 mt-4"
+                    type="button"
+                  >
+                    Kết quả
+                  </button>
+                  <p class="alert alert-success mt-4">
+                    <i class="fa-solid fa-hand-point-right mr-3"></i
+                    ><span id="txtup"></span>
+                  </p>
+                </div>
+              </li>
+              <li>
+                <input type="checkbox" checked>
+                <div class="form__top d-flex align-items-center justify-content-between">
+                <span>
+                  <i class="bi bi-8-square-fill mr-2"></i>
+                  tìm số nguyên tố đâu tiên
+                </span>
+                <i class="fa-solid fa-angle-down form__icon"></i>
+                </div>
+                <div class="form__bottom ">
+                  <button
+                   onclick="nguyentodau()"
+                    class="btn btn-primary ml-3 mt-4"
+                    type="button"
+                  >
+                    Kết quả
+                  </button>
+                  <p class="alert alert-success mt-4">
+                    <i class="fa-solid fa-hand-point-right mr-3"></i
+                    ><span id="txtnguyentodau"></span>
+                  </p>
+                </div>
+              </li>
+              <li>
+                <input type="checkbox" checked>
+                <div class="form__top d-flex align-items-center justify-content-between">
+                <span>
+                  <i class="bi bi-9-square-fill mr-2"></i>
+                  đếm số nguyên
+                </span>
+                <i class="fa-solid fa-angle-down form__icon"></i>
+                </div>
+                <div class="form__bottom ">
+                  <form class="mt-3">
+                    <input
+                      type="number"
+                      id="inputnum1"
+                      placeholder="nhập số"
+                      class="form-control"
+                    />
+                    <button onclick="mang()" class="btn btn-primary ml-3" type="button">
+                      Thêm số
+                    </button>
+                    <p class="alert alert-success mt-4">
+                      <i class="fa-solid fa-hand-point-right mr-3"></i
+                      ><span id="txtmang"></span>
+                    </p>
+                  </form>
+                  <button
+                   onclick="demsonguyen()"
+                    class="btn btn-primary ml-3 mt-4"
+                    type="button"
+                  >
+                    Kết quả
+                  </button>
+                  <p class="alert alert-success mt-4">
+                    <i class="fa-solid fa-hand-point-right mr-3"></i
+                    ><span id="txtsonguyen"></span>
+                  </p>
+                </div>
+              </li>
+              <li>
+                <input type="checkbox" checked>
+                <div class="form__top d-flex align-items-center justify-content-between">
+                <span>
+                  <span class="mr-2 form__color">10</span>
+                  so sánh số lượng số âm và dương
+                </span>
+                <i class="fa-solid fa-angle-down form__icon"></i>
+                </div>
+                <div class="form__bottom ">
+                  <button
+                   onclick="sosanh()"
+                    class="btn btn-primary ml-3 mt-4"
+                    type="button"
+                  >
+                    Kết quả
+                  </button>
+                  <p class="alert alert-success mt-4">
+                    <i class="fa-solid fa-hand-point-right mr-3"></i
+                    ><span id="txtsosanh"></span>
+                  </p>
+                </div>
+              </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Js Main  -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>
